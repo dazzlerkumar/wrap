@@ -1,37 +1,21 @@
 "use client";
-
-import React from "react";
 import RotatingText from "./RotatingText";
 import AnimatedContent from "./AnimatedContent";
-import { type Story } from "@/content/stories";
 
-interface CoverStoryProps {
-    story: Story;
-}
-
-export default function CoverStory({ story }: CoverStoryProps) {
+export default function CoverStory() {
     return (
         <div className="relative flex h-full w-full flex-col items-center justify-center text-center px-8">
-            {/*   <AnimatedContent delay={0.2} distance={40} duration={1}>
-                <div
-                    className="mb-12 p-6 rounded-3xl glass-bg relative shadow-2xl"
-                    style={{ color: story.accent || "#fff" }}
-                >
-                    <story.icon size={80} strokeWidth={1} className="drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]" />
-                </div>
-            </AnimatedContent> */}
-
             <div className="space-y-6">
                 <AnimatedContent delay={0.4} distance={30} duration={0.8}>
                     <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-white/70">
-                        I BUILT
+                        I SHIPPED
                     </h1>
                 </AnimatedContent>
 
                 <AnimatedContent delay={0.6} distance={20} duration={0.8}>
                     <div className="h-20 flex items-center justify-center">
                         <RotatingText
-                            texts={["DREAMS", "SYSTEMS", "FUTURE", "IMPACT"]}
+                            texts={["SYSTEMS", "PLATFORMS", "WORKFLOWS", "DASHBOARDS", "TOOLING"]}
                             mainClassName="text-3xl md:text-5xl font-black px-4 py-2 rounded-lg bg-transparent text-red-500"
                             staggerDuration={0.025}
                             splitBy="characters"

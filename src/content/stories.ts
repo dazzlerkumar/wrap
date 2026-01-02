@@ -1,15 +1,15 @@
 
-import { 
-  Sparkles, 
-  Rocket, 
-  Server, 
-  Layers, 
-  Boxes, 
-  Database, 
-  PenTool, 
-  Map, 
-  Terminal, 
-  Wand2, 
+import {
+  Sparkles,
+  Rocket,
+  Server,
+  Layers,
+  Boxes,
+  Database,
+  PenTool,
+  Map,
+  Terminal,
+  Wand2,
   ArrowRightCircle,
   type LucideIcon
 } from "lucide-react";
@@ -35,7 +35,7 @@ export const stories: Story[] = [
       "2,706 contributions in 2025"
     ],
     tags: ["Next.js", "React", "TypeScript"],
-    durationMs: 5000,
+    durationMs: 7500,
     accent: "#6366f1"
   },
   {

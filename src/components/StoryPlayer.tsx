@@ -168,7 +168,7 @@ export default function StoryPlayer() {
                 {/* Story Content */}
                 <div className="relative flex-1 flex flex-col items-center justify-center">
                     {currentStory.id === "cover" ? (
-                        <CoverStory story={currentStory} />
+                        <CoverStory />
                     ) : (
                         <div className="p-8 pt-16 flex flex-col items-center justify-center text-center">
                             <AnimatedContent key={`${currentIndex}-icon`} delay={0.2} distance={40} duration={1}>
