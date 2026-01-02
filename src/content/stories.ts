@@ -35,7 +35,7 @@ export const stories: Story[] = [
       "2,706 contributions in 2025"
     ],
     tags: ["Next.js", "React", "TypeScript"],
-    durationMs: 10000,
+    durationMs: 5000,
     accent: "#6366f1"
   },
   {

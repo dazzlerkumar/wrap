@@ -12,14 +12,14 @@ interface CoverStoryProps {
 export default function CoverStory({ story }: CoverStoryProps) {
     return (
         <div className="relative flex h-full w-full flex-col items-center justify-center text-center px-8">
-            <AnimatedContent delay={0.2} distance={40} duration={1}>
+            {/*   <AnimatedContent delay={0.2} distance={40} duration={1}>
                 <div
                     className="mb-12 p-6 rounded-3xl glass-bg relative shadow-2xl"
                     style={{ color: story.accent || "#fff" }}
                 >
                     <story.icon size={80} strokeWidth={1} className="drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]" />
                 </div>
-            </AnimatedContent>
+            </AnimatedContent> */}
 
             <div className="space-y-6">
                 <AnimatedContent delay={0.4} distance={30} duration={0.8}>
