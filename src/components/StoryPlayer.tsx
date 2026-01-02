@@ -139,7 +139,7 @@ export default function StoryPlayer() {
 
             {/* Main Story Frame */}
             <div
-                className="relative z-20 flex aspect-[9/16] h-full max-h-[900px] w-full flex-col overflow-hidden bg-black shadow-2xl md:w-[400px] md:h-[min(95vh,900px)] md:rounded-2xl border border-2 border-white/10"
+                className="relative z-20 flex aspect-[9/16] w-full flex-col overflow-hidden bg-black shadow-2xl md:w-[400px] h-screen md:h-[min(95vh,900px)] md:rounded-2xl border border-2 border-white/10"
                 onPointerDown={handlePointerDown}
                 onPointerUp={handlePointerUp}
                 onPointerCancel={handlePointerUp}
