@@ -7,6 +7,7 @@ import { Play, Pause } from "lucide-react";
 import { stories } from "@/content/stories";
 import { cn } from "@/lib/utils";
 import AnimatedContent from "./AnimatedContent";
+import CoverStory from "./CoverStory";
 
 export default function StoryPlayer() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -165,69 +166,75 @@ export default function StoryPlayer() {
                 </div>
 
                 {/* Story Content */}
-                <div className="relative flex-1 p-8 pt-16 flex flex-col items-center justify-center text-center">
-                    <AnimatedContent key={`${currentIndex}-icon`} delay={0.2} distance={40} duration={1}>
-                        <div
-                            className="mb-8 p-6 rounded-3xl glass-bg relative shadow-2xl"
-                            style={{ color: currentStory.accent || "#fff" }}
-                        >
-                            <currentStory.icon size={64} strokeWidth={1.5} className="drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" />
-                        </div>
-                    </AnimatedContent>
+                <div className="relative flex-1 flex flex-col items-center justify-center">
+                    {currentStory.id === "cover" ? (
+                        <CoverStory story={currentStory} />
+                    ) : (
+                        <div className="p-8 pt-16 flex flex-col items-center justify-center text-center">
+                            <AnimatedContent key={`${currentIndex}-icon`} delay={0.2} distance={40} duration={1}>
+                                <div
+                                    className="mb-8 p-6 rounded-3xl glass-bg relative shadow-2xl"
+                                    style={{ color: currentStory.accent || "#fff" }}
+                                >
+                                    <currentStory.icon size={64} strokeWidth={1.5} className="drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" />
+                                </div>
+                            </AnimatedContent>
 
-                    <AnimatedContent key={`${currentIndex}-title`} delay={0.4} distance={30} duration={0.8}>
-                        <h2 className="mb-6 text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
-                            {currentStory.title}
-                        </h2>
-                    </AnimatedContent>
+                            <AnimatedContent key={`${currentIndex}-title`} delay={0.4} distance={30} duration={0.8}>
+                                <h2 className="mb-6 text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
+                                    {currentStory.title}
+                                </h2>
+                            </AnimatedContent>
 
-                    <div className="mb-8 space-y-4 w-full">
-                        {currentStory.bullets.map((bullet, i) => (
+                            <div className="mb-8 space-y-4 w-full">
+                                {currentStory.bullets.map((bullet, i) => (
+                                    <AnimatedContent
+                                        key={`${currentIndex}-bullet-${i}`}
+                                        delay={0.6 + i * 0.15}
+                                        distance={20}
+                                        duration={0.6}
+                                    >
+                                        <p className="text-lg text-neutral-300 font-medium leading-relaxed">
+                                            {bullet}
+                                        </p>
+                                    </AnimatedContent>
+                                ))}
+                            </div>
+
                             <AnimatedContent
-                                key={`${currentIndex}-bullet-${i}`}
-                                delay={0.6 + i * 0.15}
-                                distance={20}
+                                key={`${currentIndex}-tags`}
+                                delay={0.8 + currentStory.bullets.length * 0.15}
+                                distance={10}
                                 duration={0.6}
                             >
-                                <p className="text-lg text-neutral-300 font-medium leading-relaxed">
-                                    {bullet}
-                                </p>
+                                <div className="flex flex-wrap justify-center gap-2">
+                                    {currentStory.tags.map((tag, i) => (
+                                        <span key={i} className="px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] bg-white/5 text-white/50 rounded-full border border-white/10 backdrop-blur-sm">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
                             </AnimatedContent>
-                        ))}
-                    </div>
 
-                    <AnimatedContent
-                        key={`${currentIndex}-tags`}
-                        delay={0.8 + currentStory.bullets.length * 0.15}
-                        distance={10}
-                        duration={0.6}
-                    >
-                        <div className="flex flex-wrap justify-center gap-2">
-                            {currentStory.tags.map((tag, i) => (
-                                <span key={i} className="px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] bg-white/5 text-white/50 rounded-full border border-white/10 backdrop-blur-sm">
-                                    {tag}
-                                </span>
-                            ))}
+                            {currentIndex === stories.length - 1 && (
+                                <AnimatedContent
+                                    key={`${currentIndex}-cta`}
+                                    delay={1.2}
+                                    distance={20}
+                                    duration={0.8}
+                                >
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            router.push("/stats");
+                                        }}
+                                        className="mt-12 px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                                    >
+                                        Open 2025 Stats
+                                    </button>
+                                </AnimatedContent>
+                            )}
                         </div>
-                    </AnimatedContent>
-
-                    {currentIndex === stories.length - 1 && (
-                        <AnimatedContent
-                            key={`${currentIndex}-cta`}
-                            delay={1.2}
-                            distance={20}
-                            duration={0.8}
-                        >
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    router.push("/stats");
-                                }}
-                                className="mt-12 px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)]"
-                            >
-                                Open 2025 Stats
-                            </button>
-                        </AnimatedContent>
                     )}
                 </div>
 
