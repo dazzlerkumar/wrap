@@ -3,8 +3,8 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
-import { stories, type Story } from "@/content/stories";
+import { Play, Pause } from "lucide-react";
+import { stories } from "@/content/stories";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -171,10 +171,13 @@ export default function StoryPlayer() {
                 {/* Story Content */}
                 <div className="relative flex-1 p-8 pt-16 flex flex-col items-center justify-center text-center">
                     <div
-                        className="mb-8 p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm"
+                        className="mb-8 p-6 rounded-3xl glass-bg relative"
                         style={{ color: currentStory.accent || "#fff" }}
                     >
+
+
                         <currentStory.icon size={64} strokeWidth={1.5} />
+
                     </div>
 
                     <h2 className="mb-6 text-3xl font-bold tracking-tight">
