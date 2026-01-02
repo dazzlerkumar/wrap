@@ -8,6 +8,7 @@ import { stories } from "@/content/stories";
 import { cn } from "@/lib/utils";
 import AnimatedContent from "./AnimatedContent";
 import CoverStory from "./CoverStory";
+import AIStory from "./AIStory";
 
 export default function StoryPlayer() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -169,6 +170,8 @@ export default function StoryPlayer() {
                 <div className="relative flex-1 flex flex-col items-center justify-center">
                     {currentStory.id === "cover" ? (
                         <CoverStory />
+                    ) : currentStory.id === "ai-story-copy" ? (
+                        <AIStory />
                     ) : (
                         <div className="p-8 pt-16 flex flex-col items-center justify-center text-center">
                             <AnimatedContent key={`${currentIndex}-icon`} delay={0.2} distance={40} duration={1}>

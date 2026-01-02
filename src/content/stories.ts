@@ -39,6 +39,19 @@ export const stories: Story[] = [
     accent: "#6366f1"
   },
   {
+    id: "ai-story-copy",
+    title: "The AI Co-pilot",
+    icon: Wand2,
+    bullets: [
+      "THIS YEAR I GOT A CO‑PILOT",
+      "From autocomplete to agentic workflows",
+      "Settled on Antigravity"
+    ],
+    tags: ["AI", "DX", "Antigravity"],
+    durationMs: 10500,
+    accent: "#ef4444"
+  },
+  {
     id: "nextjs-leap",
     title: "The Next.js 15 Leap",
     icon: Rocket,
