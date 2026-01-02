@@ -26,7 +26,7 @@ export default function AIStory() {
                         <span className="text-[10px] uppercase tracking-[0.4em] text-neutral-600 font-black">AI IDE JOURNEY</span>
                         <div className="h-12 flex items-center justify-center bg-white/[0.03] px-6 rounded-2xl border border-white/5 backdrop-blur-sm">
                             <RotatingText
-                                texts={["Cursor", "Windsurf", "Trae", "Kiro", "VS Code + Gemini CLI", "Antigravity"]}
+                                texts={["", "Cursor", "Windsurf", "Trae", "Kiro", "VS Code + Gemini CLI", "Antigravity"]}
                                 mainClassName="text-lg md:text-xl font-bold text-indigo-400 items-center justify-center"
                                 staggerDuration={0.025}
                                 splitBy="words"
