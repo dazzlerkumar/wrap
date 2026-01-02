@@ -147,6 +147,9 @@ export default function StoryPlayer() {
                 onPointerUp={handlePointerUp}
                 onPointerCancel={handlePointerUp}
             >
+
+                <div className="cyber-pattern absolute w-full h-full"></div>
+
                 {/* Progress Bars */}
                 <div className="absolute top-0 left-0 right-0 z-50 flex gap-1 p-3">
                     {stories.map((_, index) => (
