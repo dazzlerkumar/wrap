@@ -180,7 +180,7 @@ export default function StoryPlayer() {
                                 </div>
                             </AnimatedContent>
 
-                            <AnimatedContent key={`${currentIndex}-title`} delay={0.4} distance={30} duration={0.8}>
+                            <AnimatedContent key={`${currentIndex}-title`} delay={1.4} distance={30} duration={0.8}>
                                 <h2 className="mb-6 text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
                                     {currentStory.title}
                                 </h2>
@@ -190,7 +190,7 @@ export default function StoryPlayer() {
                                 {currentStory.bullets.map((bullet, i) => (
                                     <AnimatedContent
                                         key={`${currentIndex}-bullet-${i}`}
-                                        delay={0.6 + i * 0.15}
+                                        delay={2.4 + i * 0.8}
                                         distance={20}
                                         duration={0.6}
                                     >
@@ -203,7 +203,7 @@ export default function StoryPlayer() {
 
                             <AnimatedContent
                                 key={`${currentIndex}-tags`}
-                                delay={0.8 + currentStory.bullets.length * 0.15}
+                                delay={2.4 + currentStory.bullets.length * 0.8 + 0.4}
                                 distance={10}
                                 duration={0.6}
                             >
