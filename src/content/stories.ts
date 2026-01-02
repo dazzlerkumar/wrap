@@ -31,7 +31,7 @@ export const stories: Story[] = [
     icon: Sparkles,
     bullets: [
       "Deepak Kumar",
-      "AI-driven dev",
+      "Building the future, one commit at a time",
       "2,706 contributions in 2025"
     ],
     tags: ["Next.js", "React", "TypeScript"],
@@ -40,12 +40,12 @@ export const stories: Story[] = [
   },
   {
     id: "nextjs-leap",
-    title: "Next.js 15 leap",
+    title: "The Next.js 15 Leap",
     icon: Rocket,
     bullets: [
-      "Upgraded mental model",
-      "App Router patterns",
-      "Shipping faster"
+      "Mastering the latest App Router patterns",
+      "A new mental model for performance",
+      "Shipping with unprecedented speed"
     ],
     tags: ["Next.js 15", "Performance"],
     durationMs: 6500,
@@ -53,25 +53,25 @@ export const stories: Story[] = [
   },
   {
     id: "server-actions",
-    title: "Server Actions + DB",
+    title: "Server Actions & Data Flow",
     icon: Server,
     bullets: [
-      "Server Actions for data",
-      "MongoDB + Firebase",
-      "Admin dashboard"
+      "Seamlessly connecting UI and logic",
+      "MongoDB and Firebase integration",
+      "Building robust admin experiences"
     ],
-    tags: ["Backend", "Data"],
+    tags: ["Backend", "Architecture"],
     durationMs: 7000,
     accent: "#10b981"
   },
   {
     id: "rsc",
-    title: "React Server Components",
+    title: "Server-First Rendering",
     icon: Layers,
     bullets: [
-      "Server-first rendering",
-      "Less client JS",
-      "All Next apps"
+      "Embracing React Server Components",
+      "Drastically reducing client-side JS",
+      "Leaner, faster, better Next apps"
     ],
     tags: ["RSC", "Optimization"],
     durationMs: 6500,
@@ -79,12 +79,12 @@ export const stories: Story[] = [
   },
   {
     id: "turborepo",
-    title: "Turborepo monorepo",
+    title: "The Monorepo Masterclass",
     icon: Boxes,
     bullets: [
-      "First Turborepo",
-      "Deps worked well",
-      "Shadcn component management failed (lesson)"
+      "Scaling with Turborepo architecture",
+      "Managing complex dependencies",
+      "Lessons learned in shared components"
     ],
     tags: ["Monorepo", "DX"],
     durationMs: 8000,
@@ -92,12 +92,12 @@ export const stories: Story[] = [
   },
   {
     id: "supabase",
-    title: "Supabase/Postgres + RLS",
+    title: "The Database Fortress",
     icon: Database,
     bullets: [
-      "Postgres basics learned",
-      "Postgres functions",
-      "Row Level Security (RLS)"
+      "Direct Postgres power with Supabase",
+      "Row Level Security (RLS) deep dive",
+      "Secure by design, fast by default"
     ],
     tags: ["Database", "Security"],
     durationMs: 7500,
@@ -105,12 +105,12 @@ export const stories: Story[] = [
   },
   {
     id: "mapbox",
-    title: "Mapbox GL admin polygons",
+    title: "Mapping Complexity",
     icon: PenTool,
     bullets: [
-      "Custom polygons",
-      "Parking areas on map",
-      "Admin tooling impact"
+      "Custom polygons and geospatial data",
+      "Precision parking area management",
+      "High-impact admin tooling"
     ],
     tags: ["Mapping", "Admin Tools"],
     durationMs: 6500,
@@ -118,12 +118,12 @@ export const stories: Story[] = [
   },
   {
     id: "geojson",
-    title: "GeoJSON → Google Maps",
+    title: "The GeoJSON Pipeline",
     icon: Map,
     bullets: [
-      "GeoJSON pipeline",
-      "Google Maps rendering",
-      "User PWA booking UX"
+      "Transforming data into navigation",
+      "Optimized Google Maps rendering",
+      "A fluid PWA booking experience"
     ],
     tags: ["PWA", "UX"],
     durationMs: 6500,
@@ -131,12 +131,12 @@ export const stories: Story[] = [
   },
   {
     id: "specter-cli",
-    title: "SpecterAI CLI with Bun",
+    title: "The AI Terminal",
     icon: Terminal,
     bullets: [
-      "Bun-based CLI",
-      "Local LLM via Ollama",
-      "Conventional Commits generator"
+      "Bun-powered CLI performance",
+      "Local LLM magic with Ollama",
+      "Automated commits and DX tools"
     ],
     tags: ["CLI", "AI", "Bun"],
     durationMs: 7500,
@@ -144,12 +144,12 @@ export const stories: Story[] = [
   },
   {
     id: "ai-journey",
-    title: "AI IDE journey",
+    title: "The AI IDE Evolution",
     icon: Wand2,
     bullets: [
-      "VS Code → Cursor → Trae → Kiro → VS Code + Gemini CLI",
-      "Settled on Antigravity IDE",
-      "AI-assisted workflow matured"
+      "From VS Code to Cursor and Trae",
+      "Finding the ultimate flow with Antigravity",
+      "AI-assisted coding at its peak"
     ],
     tags: ["AI Tools", "DX"],
     durationMs: 8000,
@@ -157,12 +157,12 @@ export const stories: Story[] = [
   },
   {
     id: "outro",
-    title: "2026 & Beyond",
+    title: "Defining 2026",
     icon: ArrowRightCircle,
     bullets: [
-      "2026: deeper systems + DX",
-      "More OSS + case studies",
-      "Open stats →"
+      "Deeper systems, better developer DX",
+      "Open source and more case studies",
+      "The journey continues in the stats →"
     ],
     tags: ["Future", "Goals"],
     durationMs: 4500,
