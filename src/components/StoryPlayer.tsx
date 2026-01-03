@@ -57,7 +57,7 @@ export default function StoryPlayer() {
     }, [currentIndex]);
 
     const animate = useCallback(
-        (time: number) => {
+        function anim(time: number) {
             if (isPaused) {
                 if (startTimeRef.current !== null) {
                     pausedTimeRef.current = time - startTimeRef.current - (progressRef.current / 100) * currentStory.durationMs;
@@ -78,7 +78,7 @@ export default function StoryPlayer() {
             if (newProgress >= 100) {
                 handleNext();
             } else {
-                requestRef.current = requestAnimationFrame(animate);
+                requestRef.current = requestAnimationFrame(anim);
             }
         },
         [isPaused, currentStory.durationMs, handleNext]
