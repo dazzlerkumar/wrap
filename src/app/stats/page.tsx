@@ -77,7 +77,7 @@ export default function StatsPage() {
     return (
         <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-indigo-500/30">
             {/* Hero Section */}
-            <header className="relative border-b border-white/5 bg-white/2 backdrop-blur-3xl px-6 py-20 overflow-hidden">
+            <header className="relative border-b border-white/5 bg-white/2 backdrop-blur-3xl px-6 py-20 overflow-hidden h-screen">
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-purple-500/10" />
                 <div className="relative max-w-5xl mx-auto">
                     <Link href="/wrap" className="group mb-12 inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors">
