@@ -91,6 +91,14 @@ export default function StoryPlayer() {
         };
     }, [animate]);
 
+    const togglePause = useCallback(() => {
+        setIsManualPause((prev) => {
+            const next = !prev;
+            setIsPaused(next);
+            return next;
+        });
+    }, []);
+
     useEffect(() => {
         const handleVisibilityChange = () => {
             if (document.hidden) {
@@ -115,15 +123,8 @@ export default function StoryPlayer() {
             document.removeEventListener("visibilitychange", handleVisibilityChange);
             window.removeEventListener("keydown", handleKeyDown);
         };
-    }, [handleNext, handlePrev, isManualPause]);
+    }, [handleNext, handlePrev, isManualPause, togglePause]);
 
-    const togglePause = () => {
-        setIsManualPause((prev) => {
-            const next = !prev;
-            setIsPaused(next);
-            return next;
-        });
-    };
 
     const handlePointerDown = () => {
         setIsPaused(true);
