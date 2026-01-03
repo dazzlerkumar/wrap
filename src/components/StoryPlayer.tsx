@@ -21,6 +21,7 @@ export default function StoryPlayer() {
     const requestRef = useRef<number>(null);
     const startTimeRef = useRef<number>(null);
     const pausedTimeRef = useRef<number>(0);
+    const progressRef = useRef<number>(0);
 
     const currentStory = stories[currentIndex];
 
@@ -37,6 +38,7 @@ export default function StoryPlayer() {
         if (currentIndex < stories.length - 1) {
             setCurrentIndex((prev) => prev + 1);
             setProgress(0);
+            progressRef.current = 0;
             startTimeRef.current = null;
             pausedTimeRef.current = 0;
         } else {
@@ -48,6 +50,7 @@ export default function StoryPlayer() {
         if (currentIndex > 0) {
             setCurrentIndex((prev) => prev - 1);
             setProgress(0);
+            progressRef.current = 0;
             startTimeRef.current = null;
             pausedTimeRef.current = 0;
         }
@@ -57,19 +60,20 @@ export default function StoryPlayer() {
         (time: number) => {
             if (isPaused) {
                 if (startTimeRef.current !== null) {
-                    pausedTimeRef.current = time - startTimeRef.current - (progress / 100) * currentStory.durationMs;
+                    pausedTimeRef.current = time - startTimeRef.current - (progressRef.current / 100) * currentStory.durationMs;
                 }
                 return;
             }
 
             if (startTimeRef.current === null) {
-                startTimeRef.current = time - (progress / 100) * currentStory.durationMs - pausedTimeRef.current;
+                startTimeRef.current = time - (progressRef.current / 100) * currentStory.durationMs - pausedTimeRef.current;
             }
 
             const elapsed = time - startTimeRef.current - pausedTimeRef.current;
             const newProgress = Math.min((elapsed / currentStory.durationMs) * 100, 100);
 
             setProgress(newProgress);
+            progressRef.current = newProgress;
 
             if (newProgress >= 100) {
                 handleNext();
@@ -77,7 +81,7 @@ export default function StoryPlayer() {
                 requestRef.current = requestAnimationFrame(animate);
             }
         },
-        [isPaused, currentStory.durationMs, progress, handleNext]
+        [isPaused, currentStory.durationMs, handleNext]
     );
 
     useEffect(() => {
@@ -101,8 +105,7 @@ export default function StoryPlayer() {
             if (e.key === "ArrowLeft") handlePrev();
             if (e.key === " ") {
                 e.preventDefault();
-                setIsPaused((prev) => !prev);
-                setIsManualPause((prev) => !prev);
+                togglePause();
             }
         };
 
@@ -115,8 +118,11 @@ export default function StoryPlayer() {
     }, [handleNext, handlePrev, isManualPause]);
 
     const togglePause = () => {
-        setIsPaused((prev) => !prev);
-        setIsManualPause((prev) => !prev);
+        setIsManualPause((prev) => {
+            const next = !prev;
+            setIsPaused(next);
+            return next;
+        });
     };
 
     const handlePointerDown = (e: React.PointerEvent) => {
@@ -125,6 +131,10 @@ export default function StoryPlayer() {
 
     const handlePointerUp = (e: React.PointerEvent) => {
         if (!isManualPause) setIsPaused(false);
+    };
+
+    const handleControlClick = (e: React.MouseEvent | React.PointerEvent) => {
+        e.stopPropagation();
     };
 
     return (
@@ -242,9 +252,17 @@ export default function StoryPlayer() {
                 </div>
 
                 {/* Controls Overlay */}
-                <div className="absolute inset-x-0 bottom-0 z-40 flex items-center justify-between p-6 bg-gradient-to-t from-black/60 to-transparent">
+                <div
+                    className="absolute inset-x-0 bottom-0 z-40 flex items-center justify-between p-6 bg-gradient-to-t from-black/60 to-transparent"
+                    onPointerDown={handleControlClick}
+                    onPointerUp={handleControlClick}
+                    onClick={handleControlClick}
+                >
                     <button
-                        onClick={togglePause}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            togglePause();
+                        }}
                         className="p-2 rounded-full bg-white/10 backdrop-blur-md hover:bg-white/20 transition-colors"
                     >
                         {isPaused ? <Play size={24} fill="white" /> : <Pause size={24} fill="white" />}
