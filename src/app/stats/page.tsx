@@ -1,5 +1,10 @@
-
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "2025 Stats",
+    description: "Detailed breakdown of my contributions, projects, and tech stack in 2025.",
+};
 import {
     Map,
     Terminal,
