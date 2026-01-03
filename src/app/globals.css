@@ -10,6 +10,18 @@ body {
 
 @theme {
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  --animate-shimmer: shimmer 2s infinite;
 }
 
 /* From Uiverse.io by sunn_2633 */
@@ -224,6 +236,7 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

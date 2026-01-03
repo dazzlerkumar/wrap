@@ -178,7 +178,7 @@ export const stories: Story[] = [
       "The journey continues in the stats →"
     ],
     tags: ["Future", "Goals"],
-    durationMs: 4500,
+    durationMs: 6000,
     accent: "#f59e0b"
   }
 ];

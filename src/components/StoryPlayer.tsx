@@ -159,21 +159,34 @@ export default function StoryPlayer() {
                 <div className="cyber-pattern absolute w-full h-full"></div>
 
                 {/* Progress Bars */}
-                <div className="absolute top-0 left-0 right-0 z-50 flex gap-1 p-3">
-                    {stories.map((_, index) => (
-                        <div key={index} className="h-1 flex-1 overflow-hidden rounded-full bg-white/20">
-                            <div
-                                className={cn(
-                                    "h-full bg-white transition-all duration-100 ease-linear",
-                                    index < currentIndex ? "w-full" : index === currentIndex ? "" : "w-0"
-                                )}
-                                style={{
-                                    width: index === currentIndex ? `${progress}%` : undefined,
-                                    transition: prefersReducedMotion ? "none" : undefined
-                                }}
-                            />
-                        </div>
-                    ))}
+                <div className="absolute top-0 left-0 right-0 z-50 flex gap-1.5 p-4">
+                    {stories.map((_, index) => {
+                        const isCompleted = index < currentIndex;
+                        const isActive = index === currentIndex;
+
+                        return (
+                            <div key={index} className="h-[3px] flex-1 overflow-hidden rounded-full bg-white/15 backdrop-blur-md relative">
+                                <div
+                                    className={cn(
+                                        "h-full bg-white rounded-full transition-all",
+                                        isCompleted ? "duration-500 ease-out opacity-40" : "duration-0 opacity-100"
+                                    )}
+                                    style={{
+                                        width: isCompleted ? "100%" : isActive ? `${progress}%` : "0%",
+                                        boxShadow: isActive ? "0 0 15px rgba(255, 255, 255, 0.6)" : "none",
+                                        transition: (isActive || prefersReducedMotion) ? "none" : undefined
+                                    }}
+                                >
+                                    {isActive && (
+                                        <div className="absolute right-0 top-0 h-full w-8 bg-gradient-to-r from-transparent via-white/40 to-white blur-[2px] animate-pulse" />
+                                    )}
+                                    {isCompleted && (
+                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer" />
+                                    )}
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
 
                 {/* Story Content */}
