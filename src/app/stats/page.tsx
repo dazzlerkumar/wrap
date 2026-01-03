@@ -50,6 +50,16 @@ const projects = [
             "Component isolation and testing"
         ],
         icon: Zap
+    },
+    {
+        title: "Create Techpix App",
+        tags: ["Node.js", "Commander", "CLI"],
+        bullets: [
+            "CLI for scaffolding Techpix-based NextJS apps",
+            "Highly opinionated project structure",
+            "Scalable feature-based architecture"
+        ],
+        icon: Terminal
     }
 ];
 
@@ -87,7 +97,7 @@ export default function StatsPage() {
 
                     <p className="text-xl md:text-2xl text-neutral-400 max-w-2xl leading-relaxed">
                         AI-driven dev pushing boundaries in fullstack engineering,
-                        geospatial tools, and modern DX.
+                        admin tooling, and modern DX.
                     </p>
 
                     <div className="mt-12 flex flex-wrap gap-12">
