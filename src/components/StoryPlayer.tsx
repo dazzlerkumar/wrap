@@ -125,11 +125,11 @@ export default function StoryPlayer() {
         });
     };
 
-    const handlePointerDown = (e: React.PointerEvent) => {
+    const handlePointerDown = () => {
         setIsPaused(true);
     };
 
-    const handlePointerUp = (e: React.PointerEvent) => {
+    const handlePointerUp = () => {
         if (!isManualPause) setIsPaused(false);
     };
 

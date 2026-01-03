@@ -1,15 +1,8 @@
 
 import Link from "next/link";
 import {
-    Rocket,
-    Server,
-    Layers,
-    Boxes,
-    Database,
-    PenTool,
     Map,
     Terminal,
-    Wand2,
     ArrowLeft,
     ChevronRight,
     Github,
