@@ -53,12 +53,12 @@ export const stories: Story[] = [
   },
   {
     id: "nextjs-leap",
-    title: "The Next.js 15 Leap",
+    title: "Next.js 15 Upgrade",
     icon: Rocket,
     bullets: [
-      "Mastering the latest App Router patterns",
-      "A new mental model for performance",
-      "Shipping with unprecedented speed"
+      "Upgrading to Next.js 15",
+      "App Router patterns, done right",
+      "Faster builds. Cleaner routes."
     ],
     tags: ["Next.js 15", "Performance"],
     durationMs: 6500,
@@ -69,12 +69,12 @@ export const stories: Story[] = [
     title: "Server Actions & Data Flow",
     icon: Server,
     bullets: [
-      "Seamlessly connecting UI and logic",
-      "MongoDB and Firebase integration",
+      "Server Actions: DATA → UI, no extra API",
+      "RSC talking to MongoDB + Firebase directly",
       "Building robust admin experiences"
     ],
     tags: ["Backend", "Architecture"],
-    durationMs: 7000,
+    durationMs: 8000,
     accent: "#10b981"
   },
   {
@@ -82,8 +82,8 @@ export const stories: Story[] = [
     title: "Server-First Rendering",
     icon: Layers,
     bullets: [
-      "Embracing React Server Components",
-      "Drastically reducing client-side JS",
+      "RSC everywhere it made sense",
+      "Less client JS, more server work",
       "Leaner, faster, better Next apps"
     ],
     tags: ["RSC", "Optimization"],
@@ -92,12 +92,12 @@ export const stories: Story[] = [
   },
   {
     id: "turborepo",
-    title: "The Monorepo Masterclass",
+    title: "Monorepo: First Battle",
     icon: Boxes,
     bullets: [
       "Scaling with Turborepo architecture",
       "Managing complex dependencies",
-      "Lessons learned in shared components"
+      "Lessons learned with shadcn shared components"
     ],
     tags: ["Monorepo", "DX"],
     durationMs: 8000,
@@ -108,7 +108,7 @@ export const stories: Story[] = [
     title: "The Database Fortress",
     icon: Database,
     bullets: [
-      "Direct Postgres power with Supabase",
+      "Supabase taught me real Postgres",
       "Row Level Security (RLS) deep dive",
       "Secure by design, fast by default"
     ],
@@ -126,7 +126,7 @@ export const stories: Story[] = [
       "High-impact admin tooling"
     ],
     tags: ["Mapping", "Admin Tools"],
-    durationMs: 6500,
+    durationMs: 8000,
     accent: "#000000"
   },
   {
@@ -147,26 +147,13 @@ export const stories: Story[] = [
     title: "The AI Terminal",
     icon: Terminal,
     bullets: [
-      "Bun-powered CLI performance",
+      "Built a Bun-powered CLI",
       "Local LLM magic with Ollama",
       "Automated commits and DX tools"
     ],
     tags: ["CLI", "AI", "Bun"],
     durationMs: 7500,
     accent: "#000000"
-  },
-  {
-    id: "ai-journey",
-    title: "The AI IDE Evolution",
-    icon: Wand2,
-    bullets: [
-      "From VS Code to Cursor and Trae",
-      "Finding the ultimate flow with Antigravity",
-      "AI-assisted coding at its peak"
-    ],
-    tags: ["AI Tools", "DX"],
-    durationMs: 8000,
-    accent: "#8b5cf6"
   },
   {
     id: "outro",
